@@ -193,8 +193,10 @@ export class DiscordService {
 				}
 			} else if (/^<@!?901965277183488070>/.test(msg.content) && /\s?help\s?/g.test(msg.content)) {
 				msg.reply(
-					'Usage:\n<@901965277183488070> help to print this message\n+<quantity> <exercise> to log exercises\nQuantity for walking (walk), running (run), and biking (bike) is distance in miles\nQuantity for swimming (swim), miscellaneous (intense/moderate), and jumping jacks (jumpingjacks) is time in minutes'
+					'Usage:\n<@901965277183488070> help to print this message\n<@901965277183488070> dashboard to get the dashboard link\n+<quantity> <exercise> to log exercises\nQuantity for walking (walk), running (run), and biking (bike) is distance in miles\nQuantity for swimming (swim), miscellaneous (intense/moderate), and jumping jacks (jumpingjacks) is time in minutes'
 				);
+			} else if (/^<@!?901965277183488070>/.test(msg.content) && /\s?dashboard\s?/g.test(msg.content)) {
+				msg.reply('https://charitable-chads-bot.herokuapp.com');
 			}
 		});
 
