@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Header, Logger, NotFoundException, Param, Patch, Post, Request, Response, UnauthorizedException } from '@nestjs/common';
 import { Request as Req, Response as Res } from 'express';
 import { existsSync, readFileSync } from 'fs';
-import { join } from 'path/posix';
+import { join } from 'path';
 import { DiscordService } from './discord.service';
 
 @Controller()
