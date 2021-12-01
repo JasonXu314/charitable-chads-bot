@@ -1,7 +1,9 @@
 const sass = require('sass');
 const fs = require('fs');
 
-fs.mkdirSync('dist/public');
+if (!fs.existsSync('dist/public')) {
+	fs.mkdirSync('dist/public');
+}
 
 fs.readdirSync('public').map((file) => {
 	if (file.endsWith('scss')) {
