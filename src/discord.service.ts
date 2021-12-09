@@ -56,7 +56,7 @@ export class DiscordService {
 			await this.updateScoreboard();
 
 			const now = new Date();
-			const nextMonth = new Date(now.getFullYear(), (now.getMonth() + 1) % 12, 1);
+			const nextMonth = new Date(now.getMonth() === 11 ? now.getFullYear() + 1 : now.getFullYear(), (now.getMonth() + 1) % 12, 1);
 
 			setTimeout(() => this.reset(), nextMonth.valueOf() - now.valueOf());
 		});
@@ -80,7 +80,7 @@ export class DiscordService {
 				const authorId = msg.author.id;
 				const quantity = Number(quantityStr);
 
-				if (Number.isNaN(quantity)) {
+				if (Number.isNaN(quantity) || quantity <= 0) {
 					msg.reply('ur a fucking retard');
 					return;
 				}
