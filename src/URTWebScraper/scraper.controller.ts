@@ -23,6 +23,8 @@ export class ScraperController {
 
 		const timeRemaining = Number(await page.$eval('.amt-time .time-remaining-value', (element) => element.textContent));
 
+		await browser.close();
+
 		return {
 			goal,
 			raised,
