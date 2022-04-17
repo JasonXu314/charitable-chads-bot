@@ -10,7 +10,6 @@ export class ScraperController {
 	public async getNumbers(): Promise<CrowdfundingNumbers> {
 		const browser = await puppeteer.launch({
 			headless: true,
-			executablePath: '/usr/bin/chromium-browser',
 			args: ['--no-sandbox', '--disable-gpu']
 		});
 		const page = (await browser.pages())[0];
