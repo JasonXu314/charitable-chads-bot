@@ -11,6 +11,8 @@ async function bootstrap() {
 
 	app.use(cookieParser());
 
+	app.enableCors({ origin: true });
+
 	await app.listen(process.env.PORT || 3000);
 	wakeup();
 }
@@ -28,3 +30,4 @@ function wakeup() {
 			}, 15 * 60 * 1000);
 		});
 }
+
