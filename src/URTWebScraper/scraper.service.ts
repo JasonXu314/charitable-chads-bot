@@ -11,6 +11,7 @@ export class ScraperService {
 	constructor() {
 		this.fetching = false;
 		this.browser = puppeteer.launch({
+			executablePath: '/usr/bin/google-chrome',
 			headless: true,
 			args: ['--no-sandbox', '--disable-gpu']
 		});
