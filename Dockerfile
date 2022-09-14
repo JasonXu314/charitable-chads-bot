@@ -9,8 +9,6 @@ RUN yarn install
 
 COPY . .
 
-RUN node postinstall.js
-
 RUN yarn build
 
 ENV PORT=3000
